@@ -41,9 +41,8 @@ const Testimonials = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div 
-              key={index}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-card transition-all duration-300 hover:-translate-y-1"
+            <div key={index} className="group animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
+              <div className="bg-card border border-gray-200 rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 group-hover:border-primary/20 h-full"
             >
               {/* Rating stars */}
               <div className="flex items-center mb-4">
@@ -74,23 +73,23 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Trust indicators */}
-        <div className="mt-16 text-center">
+        {/* Enhanced trust indicators */}
+        <div className="mt-16 text-center animate-fade-in">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">1,000+</div>
+            <div className="text-center group hover:scale-110 transition-transform duration-300">
+              <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:animate-bounce-gentle">1,000+</div>
               <div className="text-sm text-gray-600">Active Contractors</div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">4.9/5</div>
+            <div className="text-center group hover:scale-110 transition-transform duration-300">
+              <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:animate-bounce-gentle">4.9/5</div>
               <div className="text-sm text-gray-600">Average Rating</div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">50k+</div>
+            <div className="text-center group hover:scale-110 transition-transform duration-300">
+              <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:animate-bounce-gentle">50k+</div>
               <div className="text-sm text-gray-600">Projects Completed</div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">98%</div>
+            <div className="text-center group hover:scale-110 transition-transform duration-300">
+              <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:animate-bounce-gentle">98%</div>
               <div className="text-sm text-gray-600">Customer Satisfaction</div>
             </div>
           </div>

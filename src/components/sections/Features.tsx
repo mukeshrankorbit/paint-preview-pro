@@ -70,28 +70,27 @@ const Features = () => {
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
-              <div 
-                key={index} 
-                className="bg-white rounded-xl p-6 hover:shadow-card transition-all duration-300 group hover:-translate-y-1"
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-300">
-                  <IconComponent className="w-6 h-6 text-primary" />
+              <div key={index} className="group animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+                <div className="bg-card rounded-2xl p-6 h-full border border-gray-200 shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 group-hover:border-primary/20">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 shadow-purple group-hover:shadow-purple-lg group-hover:scale-110 transition-all duration-300">
+                    <IconComponent className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    {feature.description}
+                  </p>
                 </div>
-                
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {feature.title}
-                </h3>
-                
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
               </div>
             );
           })}
         </div>
 
-        {/* Feature highlight */}
-        <div className="mt-16 bg-white rounded-2xl p-8 lg:p-12 shadow-card">
+        {/* Enhanced feature highlight */}
+        <div className="mt-16 bg-gradient-card rounded-2xl p-8 lg:p-12 shadow-card-hover border border-gray-200 animate-fade-in">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
@@ -103,16 +102,16 @@ const Features = () => {
                 commercial projects, we've got you covered.
               </p>
               <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div className="text-2xl font-bold text-primary">95%</div>
+                <div className="group hover:scale-110 transition-transform duration-300">
+                  <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:animate-bounce-gentle">95%</div>
                   <div className="text-sm text-gray-500">Client approval rate</div>
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary">3x</div>
+                <div className="group hover:scale-110 transition-transform duration-300">
+                  <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:animate-bounce-gentle">3x</div>
                   <div className="text-sm text-gray-500">Faster proposals</div>
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary">$500k+</div>
+                <div className="group hover:scale-110 transition-transform duration-300">
+                  <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:animate-bounce-gentle">$500k+</div>
                   <div className="text-sm text-gray-500">Jobs closed monthly</div>
                 </div>
               </div>
@@ -123,15 +122,15 @@ const Features = () => {
                 <span>Live Usage Stats</span>
               </div>
               <div className="space-y-3">
-                <div className="flex items-center justify-between bg-gray-50 rounded-lg p-3">
+                <div className="flex items-center justify-between bg-gradient-subtle rounded-lg p-3 border border-gray-100 hover:shadow-md transition-all duration-300">
                   <span className="text-sm text-gray-600">Projects completed today</span>
                   <span className="font-semibold text-primary">1,247</span>
                 </div>
-                <div className="flex items-center justify-between bg-gray-50 rounded-lg p-3">
+                <div className="flex items-center justify-between bg-gradient-subtle rounded-lg p-3 border border-gray-100 hover:shadow-md transition-all duration-300">
                   <span className="text-sm text-gray-600">Colors tested this week</span>
                   <span className="font-semibold text-primary">24,891</span>
                 </div>
-                <div className="flex items-center justify-between bg-gray-50 rounded-lg p-3">
+                <div className="flex items-center justify-between bg-gradient-subtle rounded-lg p-3 border border-gray-100 hover:shadow-md transition-all duration-300">
                   <span className="text-sm text-gray-600">Active contractors</span>
                   <span className="font-semibold text-primary">2,156</span>
                 </div>

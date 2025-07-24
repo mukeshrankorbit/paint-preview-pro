@@ -83,28 +83,30 @@ const WhyPaintersLoveIt = () => {
           })}
         </div>
 
-        {/* Success story highlight */}
-        <div className="mt-16 bg-gradient-to-r from-primary/5 via-purple-50 to-primary/5 rounded-2xl p-8 lg:p-12">
+        {/* Enhanced success story highlight */}
+        <div className="mt-16 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-2xl p-8 lg:p-12 border border-primary/20 shadow-card-hover animate-fade-in">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
-              <Trophy className="w-8 h-8 text-primary" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-primary rounded-full mb-6 shadow-purple hover:shadow-purple-lg hover:scale-110 transition-all duration-300 animate-bounce-gentle">
+              <Trophy className="w-8 h-8 text-primary-foreground" />
             </div>
-            <blockquote className="text-xl lg:text-2xl font-medium text-gray-900 mb-6">
-              "Since using Rank Orbit, I've closed 40% more jobs and my clients love seeing 
-              exactly what their space will look like. It's completely changed my business."
+            <blockquote className="text-xl lg:text-2xl font-medium text-gray-900 mb-6 relative">
+              <span className="text-6xl text-primary/20 absolute -top-4 -left-4">"</span>
+              Since using Rank Orbit, I've closed 40% more jobs and my clients love seeing 
+              exactly what their space will look like. It's completely changed my business.
+              <span className="text-6xl text-primary/20">"</span>
             </blockquote>
-            <div className="flex items-center justify-center space-x-4">
-              <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
-                <span className="text-sm font-medium text-gray-600">MP</span>
+            <div className="flex items-center justify-center space-x-4 hover:scale-105 transition-transform duration-300">
+              <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center shadow-purple">
+                <span className="text-sm font-medium text-primary-foreground">MP</span>
               </div>
               <div className="text-left">
                 <div className="font-semibold text-gray-900">Mike Peterson</div>
                 <div className="text-sm text-gray-600">Peterson Painting Co. • Texas</div>
               </div>
             </div>
-            <div className="flex items-center justify-center mt-4 space-x-1">
+            <div className="flex items-center justify-center mt-4 space-x-1 hover:scale-110 transition-transform duration-300">
               {[...Array(5)].map((_, i) => (
-                <span key={i} className="text-yellow-400">⭐</span>
+                <span key={i} className="text-yellow-400 text-xl drop-shadow-sm">⭐</span>
               ))}
               <span className="ml-2 text-sm text-gray-600">(4.9/5 from 1,200+ reviews)</span>
             </div>
