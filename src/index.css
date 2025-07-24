@@ -9,25 +9,50 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 20.2% 15.1%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 20.2% 15.1%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 20.2% 15.1%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Purple brand colors */
+    --primary: 257 67% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 257 67% 55%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 270 20% 98%;
+    --secondary-foreground: 215 20.2% 15.1%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 270 20% 98%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 270 20% 96%;
+    --accent-foreground: 215 20.2% 15.1%;
+
+    /* Professional grays */
+    --gray-50: 270 20% 98%;
+    --gray-100: 270 14% 95%;
+    --gray-200: 270 12% 89%;
+    --gray-300: 270 9% 80%;
+    --gray-400: 270 7% 64%;
+    --gray-500: 270 5% 46%;
+    --gray-600: 270 7% 36%;
+    --gray-700: 270 9% 26%;
+    --gray-800: 270 12% 19%;
+    --gray-900: 270 14% 12%;
+
+    /* Purple gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(257 67% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(267 67% 65%));
+    
+    /* Shadows */
+    --shadow-purple: 0 10px 30px -10px hsl(var(--primary) / 0.25);
+    --shadow-card: 0 4px 6px -1px hsl(220 13% 69% / 0.1);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
