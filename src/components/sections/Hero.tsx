@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import colorDemo from '@/assets/color-picker-demo.gif';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -21,20 +22,24 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in delay-300">
-              <Button 
-                variant="premium"
-                size="lg"
-                className="px-8 py-4 text-lg"
-              >
-                Try It Free
-              </Button>
-              <Button 
-                variant="outline"
-                size="lg"
-                className="px-8 py-4 text-lg"
-              >
-                Book a Demo
-              </Button>
+              <a href="/#how-it-works">
+                <Button 
+                  variant="premium"
+                  size="lg"
+                  className="px-8 py-4 text-lg"
+                >
+                  Try It Free
+                </Button>
+              </a>
+              <Link to="/contact">
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  className="px-8 py-4 text-lg"
+                >
+                  Book a Demo
+                </Button>
+              </Link>
             </div>
           </div>
 
