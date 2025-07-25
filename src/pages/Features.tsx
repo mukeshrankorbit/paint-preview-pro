@@ -1,5 +1,5 @@
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import React from 'react';
+import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { 
   Eye, 
@@ -105,100 +105,98 @@ const Features = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-white py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Everything You Need to{' '}
-            <span className="text-primary">Paint Smarter</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            Professional-grade color visualization tools designed specifically for painting 
-            contractors who want to impress clients and close more jobs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              className="bg-primary hover:bg-primary-hover text-primary-foreground px-8 py-4 text-lg font-semibold rounded-xl shadow-purple"
-            >
-              Start Free Trial
-            </Button>
-            <Button 
-              variant="outline"
-              size="lg"
-              className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold rounded-xl"
-            >
-              Watch Demo
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Feature Categories */}
-      {featureCategories.map((category, categoryIndex) => (
-        <section 
-          key={categoryIndex} 
-          className={`py-20 ${categoryIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {category.title}
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                {category.description}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {category.features.map((feature, featureIndex) => {
-                const IconComponent = feature.icon;
-                return (
-                  <div 
-                    key={featureIndex}
-                    className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-card transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                      <IconComponent className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                );
-              })}
+    <Layout>
+      <div className="min-h-screen bg-background">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-gray-50 to-white py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Everything You Need to{' '}
+              <span className="text-primary">Paint Smarter</span>
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              Professional-grade color visualization tools designed specifically for painting 
+              contractors who want to impress clients and close more jobs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg"
+                className="bg-primary hover:bg-primary-hover text-primary-foreground px-8 py-4 text-lg font-semibold rounded-xl shadow-purple"
+              >
+                Start Free Trial
+              </Button>
+              <Button 
+                variant="outline"
+                size="lg"
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg font-semibold rounded-xl"
+              >
+                Watch Demo
+              </Button>
             </div>
           </div>
         </section>
-      ))}
 
-      {/* Final CTA */}
-      <section className="py-20 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Start Your Free Trial Today
-          </h2>
-          <p className="text-xl text-purple-100 mb-8 leading-relaxed">
-            See why thousands of painting contractors trust Rank Orbit to grow their business. 
-            No credit card required, setup in minutes.
-          </p>
-          <Button 
-            size="lg"
-            className="bg-white text-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-xl"
+        {/* Feature Categories */}
+        {featureCategories.map((category, categoryIndex) => (
+          <section 
+            key={categoryIndex} 
+            className={`py-20 ${categoryIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
           >
-            Get Started Free
-          </Button>
-        </div>
-      </section>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  {category.title}
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  {category.description}
+                </p>
+              </div>
 
-      <Footer />
-    </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {category.features.map((feature, featureIndex) => {
+                  const IconComponent = feature.icon;
+                  return (
+                    <div 
+                      key={featureIndex}
+                      className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-card transition-all duration-300 hover:-translate-y-1"
+                    >
+                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <IconComponent className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        ))}
+
+        {/* Final CTA */}
+        <section className="py-20 bg-primary">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Start Your Free Trial Today
+            </h2>
+            <p className="text-xl text-purple-100 mb-8 leading-relaxed">
+              See why thousands of painting contractors trust us to grow their business. 
+              No credit card required, setup in minutes.
+            </p>
+            <Button 
+              size="lg"
+              className="bg-white text-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-xl"
+            >
+              Get Started Free
+            </Button>
+          </div>
+        </section>
+      </div>
+    </Layout>
   );
 };
 

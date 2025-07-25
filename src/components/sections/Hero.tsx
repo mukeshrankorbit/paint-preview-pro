@@ -10,7 +10,7 @@ const Hero = () => {
           <div className="text-center lg:text-left animate-fade-in-up">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
               Show Your Clients the{' '}
-              <span className="bg-gradient-primary bg-clip-text text-transparent animate-glow">Color</span>{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-violet-500 to-primary animate-gradient-x">Color</span>{' '}
               Before the Paint
             </h1>
             
@@ -35,25 +35,6 @@ const Hero = () => {
               >
                 Book a Demo
               </Button>
-            </div>
-
-            {/* Trust indicators */}
-            <div className="mt-8 pt-8 border-t border-gray-200 animate-fade-in delay-500">
-              <p className="text-sm text-gray-500 mb-4">Trusted by 1,000+ painting contractors</p>
-              <div className="flex items-center justify-center lg:justify-start space-x-6 text-gray-400">
-                <span className="text-sm flex items-center">
-                  <span className="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                  <span className="ml-1">4.9/5 rating</span>
-                </span>
-                <span className="text-sm flex items-center">
-                  <span className="text-green-500 mr-1">✓</span>
-                  14-day free trial
-                </span>
-                <span className="text-sm flex items-center">
-                  <span className="text-green-500 mr-1">✓</span>
-                  No credit card required
-                </span>
-              </div>
             </div>
           </div>
 

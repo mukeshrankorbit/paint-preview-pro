@@ -1,63 +1,97 @@
+import React from 'react';
+import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card";
+
 const Testimonials = () => {
   const testimonials = [
     {
-      content: "Rank Orbit has completely transformed how I present color options to clients. I'm closing 60% more jobs now because clients can actually see what they're getting. The AI suggestions are spot-on too!",
-      author: "Sarah Mitchell",
-      company: "Mitchell Painting Services",
-      location: "California",
+      author: "John Smith",
+      company: "Smith & Sons Painting",
+      location: "Los Angeles, CA",
+      content: "Paint Preview Pro has transformed how we present color options to clients. The visualization tool is incredibly accurate and has helped us close more deals.",
       rating: 5,
-      avatar: "SM"
+      avatar: "JS"
     },
     {
-      content: "As a contractor with 20+ years experience, I was skeptical about new tech. But this tool pays for itself every month. My clients love the instant previews and I love the professional proposals it generates.",
-      author: "David Rodriguez",
-      company: "Rodriguez Brothers Painting",
-      location: "Texas",
+      author: "Sarah Johnson",
+      company: "Elite Painters",
+      location: "Chicago, IL",
+      content: "The ability to show clients exactly how their space will look with different colors has been a game-changer. Our close rate has increased by 40%.",
       rating: 5,
-      avatar: "DR"
+      avatar: "SJ"
     },
     {
-      content: "The time savings alone make this worth every penny. What used to take me 3 site visits now takes 1. Plus, clients are way more confident in their color choices when they can see the results first.",
-      author: "Jennifer Lee",
-      company: "Precision Paint Co.",
-      location: "Florida",
+      author: "Mike Brown",
+      company: "Brown's Professional Painting",
+      location: "Houston, TX",
+      content: "Outstanding tool for any professional painter. The mobile app makes it easy to visualize colors right at the client's location.",
       rating: 5,
-      avatar: "JL"
+      avatar: "MB"
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="relative py-20 bg-white overflow-hidden animate-fade-in-up">
+      {/* Decorative SVG background */}
+      <svg 
+        className="absolute left-1/2 top-0 -translate-x-1/2 -z-10 opacity-30 blur-2xl" 
+        width="900" 
+        height="400" 
+        viewBox="0 0 900 400" 
+        fill="none" 
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <ellipse 
+          cx="450" 
+          cy="200" 
+          rx="400" 
+          ry="120" 
+          fill="url(#testimonials-bg-gradient)" 
+        />
+        <defs>
+          <linearGradient 
+            id="testimonials-bg-gradient" 
+            x1="0" 
+            y1="0" 
+            x2="900" 
+            y2="400" 
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#fbbf24" />
+            <stop offset="1" stopColor="#60a5fa" />
+          </linearGradient>
+        </defs>
+      </svg>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            What Contractors Are Saying
+            What Our Customers Say
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Join thousands of painting professionals who have transformed their business 
-            with our color visualization platform.
+            Join thousands of satisfied painting professionals who are winning more business with our platform.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="group animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
-              <div className="bg-card border border-gray-200 rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 group-hover:border-primary/20 h-full"
+            <Card 
+              key={index} 
+              className="group animate-fade-in-up hover:shadow-2xl hover:scale-105 transition-all duration-300" 
+              style={{ animationDelay: `${index * 120}ms` }}
             >
-              {/* Rating stars */}
-              <div className="flex items-center mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-lg">⭐</span>
-                ))}
-              </div>
-
-              {/* Testimonial content */}
-              <blockquote className="text-gray-700 mb-6 leading-relaxed">
-                "{testimonial.content}"
-              </blockquote>
-
-              {/* Author info */}
-              <div className="flex items-center">
+              <CardHeader className="pb-0">
+                <div className="flex items-center mb-2">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">⭐</span>
+                  ))}
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0 pb-4">
+                <blockquote className="text-gray-700 mb-4 leading-relaxed">
+                  "{testimonial.content}"
+                </blockquote>
+              </CardContent>
+              <CardFooter className="flex items-center pt-0">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
                   <span className="text-primary font-semibold text-sm">
                     {testimonial.avatar}
@@ -68,30 +102,17 @@ const Testimonials = () => {
                   <div className="text-sm text-gray-600">{testimonial.company}</div>
                   <div className="text-sm text-gray-500">{testimonial.location}</div>
                 </div>
-              </div>
-            </div>
+              </CardFooter>
+            </Card>
           ))}
         </div>
 
-        {/* Enhanced trust indicators */}
-        <div className="mt-16 text-center animate-fade-in">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
-            <div className="text-center group hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:animate-bounce-gentle">1,000+</div>
-              <div className="text-sm text-gray-600">Active Contractors</div>
-            </div>
-            <div className="text-center group hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:animate-bounce-gentle">4.9/5</div>
-              <div className="text-sm text-gray-600">Average Rating</div>
-            </div>
-            <div className="text-center group hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:animate-bounce-gentle">50k+</div>
-              <div className="text-sm text-gray-600">Projects Completed</div>
-            </div>
-            <div className="text-center group hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:animate-bounce-gentle">98%</div>
-              <div className="text-sm text-gray-600">Customer Satisfaction</div>
-            </div>
+        {/* Trust indicators */}
+        <div className="mt-16 text-center">
+          <div className="inline-flex items-center space-x-8 text-gray-500">
+            <span>✓ 1,000+ Contractors</span>
+            <span>✓ 50,000+ Projects</span>
+            <span>✓ 98% Satisfaction Rate</span>
           </div>
         </div>
       </div>
