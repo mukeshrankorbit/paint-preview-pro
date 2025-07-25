@@ -27,38 +27,20 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black">
+    <section id="how-it-works" className="relative py-24 overflow-hidden bg-gradient-subtle">
       {/* Main gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.15] via-violet-500/[0.15] to-fuchsia-500/[0.15]" />
-
-      {/* Animated gradient background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-primary/[0.15] via-violet-500/[0.15] to-primary/[0.15] animate-gradient-x" />
-      </div>
-
-      {/* Decorative patterns */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-1/2 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/[0.15] to-transparent rounded-[100%] blur-3xl transform -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-full h-1/2 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-violet-500/[0.15] to-transparent rounded-[100%] blur-3xl transform translate-y-1/2" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.15] via-violet-500/[0.15] to-fuchsia-500/[0.15] pointer-events-none" />
       
-      {/* Animated gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-20 w-72 h-72 bg-gradient-to-br from-primary/30 to-violet-500/30 rounded-full blur-3xl animate-float opacity-75" />
-        <div className="absolute top-3/4 -right-20 w-80 h-80 bg-gradient-to-br from-violet-500/30 to-fuchsia-500/30 rounded-full blur-3xl animate-float-delayed opacity-75" />
-        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-gradient-to-br from-fuchsia-500/30 to-primary/30 rounded-full blur-3xl animate-float transform -translate-x-1/2 opacity-75" />
-      </div>
-
-      {/* Mesh overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-gray-900/50 to-gray-900/80" />
-
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-100 to-white mb-6 filter drop-shadow-sm animate-gradient-x">
-            How It Works
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            How It{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-violet-500 to-primary animate-gradient-x">
+              Works
+            </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Get from photo to proposal in minutes, not hours. Our simple 3-step process 
             makes color visualization effortless.
           </p>
@@ -83,17 +65,17 @@ const HowItWorks = () => {
                   </div>
 
                   {/* Icon container with glass effect */}
-                  <div className="dark-glass-card w-24 h-24 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500 relative">
+                  <div className="bg-white/90 backdrop-blur-sm w-24 h-24 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500 relative border-2 border-gray-100/80">
                     <div className={`absolute inset-0 bg-gradient-to-br ${step.gradient} opacity-20 rounded-2xl group-hover:opacity-30 transition-opacity duration-500`} />
-                    <IconComponent className="w-12 h-12 text-white group-hover:scale-110 transition-transform duration-500" />
+                    <IconComponent className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-500" />
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                <h3 className="text-xl font-semibold mb-4 text-gray-900">
                   {step.title}
                 </h3>
 
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {step.description}
                 </p>
 
@@ -111,13 +93,20 @@ const HowItWorks = () => {
 
         {/* Enhanced call to action */}
         <div className="text-center mt-20 animate-fade-in-up" style={{ animationDelay: '600ms' }}>
-          <div className="dark-glass-card cursor-pointer inline-flex items-center px-8 py-4 rounded-full group hover:scale-105 transition-transform duration-500">
+          <div className="inline-flex items-center px-8 py-4 bg-white/90 backdrop-blur-sm rounded-full border-2 border-gray-100/80 group hover:scale-105 transition-transform duration-500 cursor-pointer">
             <span className="w-3 h-3 bg-gradient-to-r from-primary to-violet-500 rounded-full mr-3 animate-pulse" />
-            <span className="text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 ">
+            <span className="text-lg font-medium text-gray-900">
               Start visualizing
             </span>
           </div>
         </div>
+      </div>
+
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl animate-float delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/3 rounded-full blur-3xl animate-float delay-500"></div>
       </div>
     </section>
   );

@@ -96,7 +96,7 @@ const Pricing = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Plans That Fit Your{' '}
-              <span className="text-primary">Painting Business</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-violet-500 to-primary animate-gradient-x">Painting Business</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               Start with a 14-day free trial. No credit card required. 
@@ -133,7 +133,7 @@ const Pricing = () => {
         </section>
 
         {/* Pricing Cards */}
-        <section className="py-20 bg-white">
+        <section className="pb-5 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-8">
               {plans.map((plan, index) => (
@@ -213,22 +213,30 @@ const Pricing = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 overflow-hidden bg-gradient-subtle">
+          {/* Main gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.15] via-violet-500/[0.15] to-fuchsia-500/[0.15] pointer-events-none" />
+          {/* Floating orbs */}
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div className="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float"></div>
+            <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl animate-float delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/3 rounded-full blur-3xl animate-float delay-500"></div>
+          </div>
+          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Pricing Questions?
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+                Pricing <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary via-violet-500 to-primary animate-gradient-x'>Questions?</span> 
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-700">
                 Common questions about our pricing and plans
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
               {faqItems.map((faq, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 border border-gray-200">
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border-2 border-gray-100/80 shadow-lg">
                   <h3 className="font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
